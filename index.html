@@ -207,6 +207,8 @@ Error message and password prompt
 
 <li>Hosting a TiddlyWiki on GitHub pages</li>
 
+<li>Object Oriented Design</li>
+
 <li>Paint.NET</li>
 
 <li>Software Design</li>
@@ -10170,7 +10172,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201229223712769" list="Welcome Contents [[Software Design]]" modified="20201229223818660" title="$:/StoryList">
+<div created="20201229223712769" list="Welcome Contents [[Software Design]] [[Object Oriented Design]]" modified="20201229223834510" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10320,6 +10322,13 @@ Getting yourself out of a hole: https://ohshitgit.com/
 <pre>The following article provides detailed instructions on how to host a TiddlyWiki on GitHub Pages. The key thing that isn't especially clear is that the personal access token (PAT) is only stored locally on your machine (as a cookie in your browser cache) so others accessing your website do not get access to your GitHub account and cannot change the Wiki. When they hit &quot;Save Changes&quot; they will download a clone of TiddlyWiki.
 
 https://chrisaldrich.wordpress.com/2020/04/04/self-hosting-tiddlywiki-with-github-pages/</pre>
+</div>
+<div created="20201229223843930" modified="20201229224444067" title="Object Oriented Design">
+<pre>!! The 'Apron Strings' Anti-Pattern
+
+Perhaps this has another name but I've seen this pattern arise a lot in very poorly designed inheritance hierarchies and decided to call it the &quot;Apron strings pattern&quot; as it creates a tight bond between parent and child.
+
+The pattern arises when a child class calls a method on the parent class, only for the parent to subsequently call back with other methods on the child class. Whilst it may be possible to correctly design an inheritance hierarchy that functions with this pattern it seems to be highly correlated with poor design resulting in a hard to maintain design.</pre>
 </div>
 <div created="20201229215627247" modified="20201229220041993" title="Paint.NET">
 <pre>Image editing tool
