@@ -183,6 +183,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>Adding Git Bash to Windows Terminal</li>
+
 <li>Git</li>
 
 <li>Software Tools</li>
@@ -10120,7 +10122,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201229203058561" list="[[Software Tools]] [[Windows Terminal]] Git Welcome" modified="20201229214800738" title="$:/StoryList">
+<div created="20201229203058561" list="[[Software Tools]] [[Windows Terminal]] [[Adding Git Bash to Windows Terminal]] Git Welcome" modified="20201229215015076" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10231,6 +10233,24 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div created="20201229215043548" modified="20201229215437688" title="Adding Git Bash to Windows Terminal">
+<pre>Add the following to the &quot;profiles&quot; section in the settings.json file for the terminal (this works for a default install path of Git)
+
+
+```
+{
+    // Git-Bash profile
+    &quot;guid&quot;: &quot;{3b433b11-c393-47ed-9421-bafebb058f6c}&quot;,
+    &quot;name&quot;: &quot;Git-Bash&quot;,
+    &quot;commandline&quot;: &quot;C:\\Program Files\\Git\\bin\\bash.exe&quot;,
+    &quot;icon&quot;: &quot;C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico&quot;
+},
+...
+```
+
+(source: https://executecommands.com/add-git-bash-to-windows-terminal-app-profile/) 
+</pre>
 </div>
 <div created="20201229214530424" modified="20201229214757377" title="Git">
 <pre>Distributed Version Control System with a powerful core idea and a ton of complex scenarios that arise from that. 
