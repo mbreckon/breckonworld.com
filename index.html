@@ -205,6 +205,8 @@ Error message and password prompt
 
 <li>Contents</li>
 
+<li>Draft of 'Contents'</li>
+
 <li>Git</li>
 
 <li>Hosting a TiddlyWiki on GitHub pages</li>
@@ -224,6 +226,8 @@ Error message and password prompt
 <li>Software Tools</li>
 
 <li>TiddlyWiki</li>
+
+<li>Using Apple iCloud on Windows</li>
 
 <li>Visual Studio Code</li>
 
@@ -10185,7 +10189,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201231123533502" list="Welcome Contents [[Software Tools]]" modified="20201231123535399" title="$:/StoryList">
+<div created="20210122093419065" list="Welcome [[Draft of 'Contents']] [[Using Apple iCloud on Windows]] [[Software Tools]]" modified="20210122093513841" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10323,6 +10327,13 @@ Error message and password prompt
 
 [[Software Design]]</pre>
 </div>
+<div created="20201229220327427" draft.of="Contents" draft.title="Contents" modified="20210122093509932" title="Draft of 'Contents'">
+<pre>[[Software Tools]]
+
+[[Software Design]]
+
+[[Using Apple iCloud on Windows]]</pre>
+</div>
 <div created="20201229214530424" modified="20201229235016057" title="Git">
 <pre>Distributed Version Control System with a powerful core idea and a ton of complex scenarios that arise from that. 
 
@@ -10410,6 +10421,16 @@ If you want real inspiration then consider [[Scott Hanselman]]'s list of Windows
 <div created="20201229223718321" modified="20201229223736238" title="TiddlyWiki">
 <pre>Download &amp; Documentation:
 https://tiddlywiki.com/
+</pre>
+</div>
+<div created="20210122093519610" modified="20210122093735753" title="Using Apple iCloud on Windows">
+<pre>By default the iCloud app places data in your user directory (by default this is on your Windows partition. If you want to place the files elsewhere without moving your user directory you need to use:
+
+```
+    mklink /J &quot;&lt;&lt;path to user directory&gt;&gt;/iCloudDrive&quot; &quot;&lt;&lt;path to new folder for iCloud drive files&gt;&gt;&quot;
+    mklink /J &quot;&lt;&lt;path to user directory&gt;&gt;/iCloudPhotos&quot; &quot;&lt;&lt;path to new folder for iCloud photos&gt;&gt;&quot;
+
+```
 </pre>
 </div>
 <div created="20201231111647417" modified="20201231115841318" title="Visual Studio Code">
