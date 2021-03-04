@@ -10363,7 +10363,7 @@ It is often preferable, all things being equal, to use a programming language yo
 
 ![[Python]]</pre>
 </div>
-<div created="20210304170441453" modified="20210304171447672" title="Linux Systems Programming">
+<div created="20210304170441453" modified="20210304171528263" title="Linux Systems Programming">
 <pre>! Condition Variables
 
 Condition variables are a primitive used to signal from one thread to another thread that it should continue. There is some difference to the event types available in Windows and I constantly keep forgetting to construct them properly so this is a note to remind me...
@@ -10381,11 +10381,16 @@ std::condition_variable condition_variable;
 // Waiting thread
 signal = true;
 
-// The key thing is that we must check the signal state after the condition_variable.wait_for exits as it can either already be signalled or possible awake spuriously. I always forget this part...
+// The key thing is that we must check the signal state after
+// the condition_variable.wait_for exits as it can either
+// already be signalled or possible awake spuriously.
+// I always forget this part...
 while (signal)
 {
     std::unique_lock&lt;std::mutex&gt; lck(signalMutex);
-    if (condition_variable.wait_for(lck, std::chrono::seconds(5)) == std::cv_status::timout)
+    if (condition_variable.wait_for(
+           lck,
+           std::chrono::seconds(5)) == std::cv_status::timout)
     {
         // Deal with the timeout
     }
