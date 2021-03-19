@@ -10363,8 +10363,19 @@ It is often preferable, all things being equal, to use a programming language yo
 
 ![[Python]]</pre>
 </div>
-<div created="20210304170441453" modified="20210319170410699" title="Linux Systems Programming">
-<pre>! Condition Variables
+<div created="20210304170441453" modified="20210319170811043" title="Linux Systems Programming">
+<pre>! Threads
+
+To join a thread (typically having just reset a running flag) you ''must'' check first if the thread is joinable. If you don't there will be an exception thrown if the thread has already exited. This exception is thrown when the program is shutting down so can be missed.
+
+
+```
+if (threadObj.joinable())
+    threadObj.join();
+```
+
+
+! Condition Variables
 
 Condition variables are a primitive used to signal from one thread to another thread that it should continue. There is some difference to the event types available in Windows and I constantly keep forgetting to construct them properly so this is a note to remind me...
 
