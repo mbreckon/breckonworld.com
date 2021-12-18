@@ -209,6 +209,8 @@ Error message and password prompt
 
 <li>Git</li>
 
+<li>Hello World Z80</li>
+
 <li>Hosting a TiddlyWiki on GitHub pages</li>
 
 <li>Jupyter Notebook</li>
@@ -10193,7 +10195,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20211218160014301" list="Welcome [[Hosting a TiddlyWiki on GitHub pages]] Contents [[Amstrad CPC]]" modified="20211218161725101" title="$:/StoryList">
+<div created="20211218160014301" list="Welcome [[Hosting a TiddlyWiki on GitHub pages]] Contents [[Amstrad CPC]] [[Hello World Z80]]" modified="20211218161804111" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10359,6 +10361,57 @@ git branch -m &lt;newname&gt;
 git clone http://github.com/large-repo --depth 1
 cd large-repo
 git fetch --unshallow
+```
+</pre>
+</div>
+<div created="20211218161817491" modified="20211218162239770" title="Hello World Z80">
+<pre>! Z88DK
+https://z88dk.org/site/
+
+''Using Z88DK as an assembler only...''
+
+The following assembles hello.asm into hello.bin ready that it can be loaded into memory using Amstrad BASIC.
+
+```
+z80asm -r=0x8000 -ohello.o -b hello.asm
+z88dk-appmake +cpc -b hello.o --org=0x8000 -o hello.bin
+```
+
+This is loaded and executed using...
+
+
+```
+memory &amp;7fff
+load &quot;hello.bin&quot;,&amp;8000
+call &amp;8000
+```
+
+The hello world program (courtesy of https://www.chibiakumas.com/z80/AmstradCPC.php)  ...
+
+
+```
+	ld hl, message
+	call printstring
+	ret
+
+printchar equ 0xbb5a
+
+newline:
+	ld a,13 		; carriage return
+	call printchar
+	ld a, 10 		; line feed
+	jp printchar
+
+printstring:
+	ld a, (hl)
+	cp 255
+	ret z
+	inc hl
+	call printchar
+	jr printstring
+
+message: db &quot;Hello world 321!&quot;, 255
+
 ```
 </pre>
 </div>
